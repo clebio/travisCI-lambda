@@ -1,0 +1,8 @@
+service:
+  name: travis-lambda-demo
+provider:
+  name: aws
+  runtime: python3.6
+functions:
+  hello:
+    handler: handler.hello
