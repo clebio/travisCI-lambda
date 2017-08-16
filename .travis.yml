@@ -4,3 +4,16 @@ python:
   - "3.5"
 install:
   - pip install -r requirements.txt
+
+script:
+  python3 -c 'from datetime import datetime; print(datetime.now())'
+
+deploy:
+  provider: lambda
+  function_name: "travis-lambda-demo-dev-hello"
+  region: "us-east-1"
+  role: "arn:aws:iam::$AWS_ACCOUNT:role/lambda-demo"
+  runtime: "python3.6"
+  handler_name: "handler.hello"
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
