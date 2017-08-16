@@ -15,5 +15,6 @@ deploy:
   role: "arn:aws:iam::$AWS_ACCOUNT:role/lambda-demo"
   runtime: "python3.6"
   handler_name: "handler.hello"
+  module_name: "src"
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
