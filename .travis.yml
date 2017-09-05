@@ -19,3 +19,4 @@ deploy:
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
   publish: true
+  description: "Deploy build {context.env['TRAVIS_BUILD_NUMBER']} at commit {context.env['TRAVIS_COMMIT']} from Travis CI"
