@@ -21,3 +21,4 @@ var/
 
 # Serverless directories
 .serverless
+lambda_handler.zip
