@@ -1,22 +1,22 @@
 language: python
-
 python:
-  - "3.5"
+  - "2.7"
+  # - "3.6"
+
 install:
   - pip install -r requirements.txt
 
 script:
-  python3 -c 'from datetime import datetime; print(datetime.now())'
+  - zip deploy/app.zip application.py
 
 deploy:
-  provider: lambda
-  function_name: "travis-lambda-demo-dev-hello"
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key:
+    secure: $AWS_SECRET_ACCESS_KEY
   region: "us-east-1"
-  role: "arn:aws:iam::$AWS_ACCOUNT:role/lambda-demo"
-  runtime: "python3.6"
-  handler_name: "handler.hello"
-  module_name: "src"
-  access_key_id: "$AWS_ACCESS_KEY"
-  secret_access_key: "$AWS_SECRET_KEY"
-  publish: true
-  description: "Deploy build $TRAVIS_BUILD_NUMBER at commit $TRAVIS_COMMIT from Travis CI"
+  app: "beanstalk"
+  env: "dev"
+  bucket_name: $S3_BUCKET
+  zip_file: deploy/app.zip
+  skip_cleanup: true
