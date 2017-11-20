@@ -110,7 +110,7 @@ response = """
 </head>
 <body id="sample">
   <div class="textColumn">
-    <h1>Congratulations</h1>
+    <h1>Hello, World!</h1>
     <p>You've now deployed a new version.</p>
   </div>
 
