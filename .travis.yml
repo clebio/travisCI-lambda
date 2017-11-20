@@ -4,7 +4,7 @@ python:
   # - "3.6"
 
 install:
-  - pip install -r requirements.txt
+  - echo "pip install -r requirements.txt"
 
 script:
   - zip deploy/app.zip application.py
@@ -20,3 +20,6 @@ deploy:
   bucket_name: $S3_BUCKET
   zip_file: deploy/app.zip
   skip_cleanup: true
+  on:
+    all_branches: true
+    # branch: **
