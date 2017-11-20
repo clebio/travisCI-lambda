@@ -15,7 +15,7 @@ deploy:
   secret_access_key:
     secure: $AWS_SECRET_ACCESS_KEY
   region: "us-east-1"
-  app: "beanstalk"
+  app: "beanstalk-beanstalk"
   env: "dev"
   bucket_name: $S3_BUCKET
   zip_file: deploy/app.zip
