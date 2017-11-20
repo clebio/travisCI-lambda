@@ -111,7 +111,7 @@ response = """
 <body id="sample">
   <div class="textColumn">
     <h1>Congratulations</h1>
-    <p>You've now deployed in an automated fashion. Kudos.</p>
+    <p>You've now deployed a new version.</p>
   </div>
 
   <div class="linksColumn">
